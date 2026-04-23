@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>help center</title>
+</head>
+  <style>
+  body{
+     background-image: url(m5.jpg);
+    background-size: cover;
+    display: grid;
+    justify-content: center;
+    font-size: 2em;
+
+  }
+   p{
+    font-family: courier New, monospace;
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+    margin-top: 70px;
+    font-size: 1.3em;
+    margin: auto;
+}
+.form{
+    justify-content: center;
+    display: grid;
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+    border: 2px solid #0f0;
+    border-radius: 20px;
+    box-shadow: 5px 9px 2px 1px #000;
+    height: auto;
+    width: 50%;
+    padding: 40px;
+    margin: auto;
+    margin-top: 50px;
+    font-size: 1.5em;
+}
+ input{
+        margin-top: 10px;
+     margin-bottom: 20px;
+       width: 115%;
+       font-size: 0.7em;
+       border: 1px solid #0f0;
+       border-radius: 10px;
+       padding: 7px;
+ }
+ input:hover{
+     transform: scale(1.1);
+ }
+
+ textarea{
+       margin-top: 10px;
+       margin-bottom: 20px;
+       width: 115%;
+       font-size: 0.7em;
+       border: 1px solid #0f0;
+       border-radius: 10px;
+       padding: 7px;
+ }
+ textarea:hover{
+     transform: scale(1.05);
+ }
+
+ button{
+       font-size: 0.7em;
+       border: 1px solid #0f0;
+       border-radius: 10px;
+       padding: 7px;
+       background-color: #000;
+       color: #0f0;
+       text-shadow: 0 0 5px #0f0;
+       cursor: pointer;
+       width: 100%;
+       margin-top: 100px;
+
+ }
+  button:hover{
+     transform: scale(1.05);
+ }
+ button:active{
+        background-color: #fff;
+        color: #000;
+ }
+
+ .footer{
+       margin: auto;
+       margin-top: 200px;
+       font-family:  Courier New,  monospace;
+       color: #0f0;
+       text-shadow: 0 0 5px #0f0;
+        font-size: 1.5em;
+    
+   }
+
+  </style>
+<body>
+    <p>
+        Welcome to our help center, please explain your problem
+    </p>
+     <form action="http://localhost:3000/submit
+" method='POST'>
+          <div class='form'>
+                <code>FULL NAME</code>
+                <input type="text" name='fullname'required
+                 placeholder='mickeal jackson' />
+
+                  <code>E.MAIL ADDRESS</code>
+                  <input id="email" name="email" type="email"required
+                   placeholder="mickealjackson@gmail.com">
+
+                   <code>description</code>
+                   <textarea name="description" rows="10" cols="10" required placeholder="describe any problem or service you want us to give you."></textarea>
+
+                  <button>send request</button>
+
+
+         </div>
+    </form>
+
+    <p class="footer">&copy Exvin Chipwere 2026</p>
+</body>
+
+</html>
