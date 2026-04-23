@@ -5,19 +5,19 @@ app.use(express.urlencoded({ extended: true }));
 
 const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+  host: 'process.env.EMAIL_HOST',
   port: 587,
   auth: {
-    user: 'elightitsolutions@gmail.com',
-    pass: 'zfph qabx vzye kmcr',
+    user: 'process.env.EMAIL_USER',
+    pass: 'process.env.EMAIL_PASS',
   }
 });
 
 app.post('/submit', (req, res) => {
   const { fullname, email, description } = req.body;
   const mailOptions = {
-    from: 'elightitsolutions@gmail.com',
-    to: 'elightitsolutions@gmail.com',
+    from: 'process.env.EMAIL_USER',
+    to: 'process.env.EMAIL_USER',
     subject: 'New submission',
     text: `Name: ${fullname}\nEmail: ${email}\nDescription: ${description}`
   };
