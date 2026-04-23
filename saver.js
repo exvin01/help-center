@@ -2,22 +2,22 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 const nodemailer = require('nodemailer');
+
 const transporter = nodemailer.createTransport({
-  host: 'process.env.EMAIL_HOST',
+  host: process.env.EMAIL_HOST,
   port: 587,
   auth: {
-    user: 'process.env.EMAIL_USER',
-    pass: 'process.env.EMAIL_PASS',
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
   }
 });
 
 app.post('/submit', (req, res) => {
   const { fullname, email, description } = req.body;
   const mailOptions = {
-    from: 'process.env.EMAIL_USER',
-    to: 'process.env.EMAIL_USER',
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_USER,
     subject: 'New submission',
     text: `Name: ${fullname}\nEmail: ${email}\nDescription: ${description}`
   };
@@ -27,8 +27,6 @@ app.post('/submit', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
-});
-
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Server on port ${port}`));
 module.exports = app;
