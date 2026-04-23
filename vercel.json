@@ -1,11 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "saver.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
       "src": "/",
@@ -13,8 +7,7 @@
     },
     {
       "src": "/submit",
-      "dest": "/saver.js"
+      "dest": "/server.js"
     }
   ]
 }
-
